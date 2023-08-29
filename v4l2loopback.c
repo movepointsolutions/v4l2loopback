@@ -1607,6 +1607,7 @@ static int vidioc_reqbufs(struct file *file, void *fh,
 		if (opener->buffers_number < dev->used_buffers)
 			dev->used_buffers = opener->buffers_number;
 		return 0;
+	case V4L2_MEMORY_USERPTR:
 	default:
 		return -EINVAL;
 	}
